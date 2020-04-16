@@ -14,12 +14,12 @@ A WordPress plugin to easily display icon grids using shortcodes, widgets and Gu
 ## Demo
 https://websitesbuiltforyou.com/wordpress/easy-icon-grid-plugin-for-wordpress
 
-##How To Use
+## How To Use
 Full usage instructions can be found on the plugin homepage:
 
 https://websitesbuiltforyou.com/wordpress/easy-icon-grid-plugin-for-wordpress
 
-##Installation
+## Installation
 You can download the latest stable pre-compiled plugin installation (.zip) file at:
 
 https://websitesbuiltforyou.com/wordpress/easy-icon-grid-plugin-for-wordpress
@@ -32,4 +32,4 @@ Steve Perkins
 ## Licence
 This plugin is licensed under the GNU GPL 2.0 or higher licence.
 
-Copyright (c) Steve Perkins, [Websites Built For You](https://websitesbuiltforyou.com)
+Copyright (c) [Websites Built For You](https://websitesbuiltforyou.com)
