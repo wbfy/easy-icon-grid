@@ -5,8 +5,8 @@ A WordPress plugin to easily display icon grids using shortcodes, widgets and Gu
 
 ## Features
 * Responsive design;
-* Up to 15 icons per section;
-* Unlimited sections per page;
+* Up to 15 icons per grid;
+* Unlimited grids per page;
 * Can be embedded via shortcode, widget or Gutenberg block;
 * By default uses font-awesome/5.13.0 to provide the icons;
 * Can be linked to any other online font including font-awesome kits;
