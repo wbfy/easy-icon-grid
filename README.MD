@@ -1,7 +1,7 @@
 # Easy Icon Grid Plugin For WordPress
 
 ## Synopsis
-A WordPress plugin to easily display icon grids using shortcodes, widgets and Gutenberg blocks
+Easily display icon grids using shortcodes, widgets and Gutenberg blocks
 
 ## Features
 * Responsive design;
