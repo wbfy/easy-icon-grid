@@ -1,0 +1,2 @@
+<?php
+// Naughty naughty

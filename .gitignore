@@ -1,0 +1,8 @@
+node_modules
+.vscode
+assets/css
+assets/js
+assets/languages
+dist
+build.ps1
+debug.log
