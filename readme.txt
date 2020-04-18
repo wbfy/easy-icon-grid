@@ -32,7 +32,7 @@ present a list of features.
 
 You can find full usage instructions on the plugin homepage:
 
-https://websitesbuiltforyou.com/plugins/wordpress/easy-icon-grid-plugin
+https://websitesbuiltforyou.com/plugins/wordpress/easy-icon-grid
 
 
 == Installation ==

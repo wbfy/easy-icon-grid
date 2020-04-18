@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Easy Icon Grid
- * Plugin URI: https://websitesbuiltforyou.com/plugins/wordpress/easy-icon-grid-plugin-for-wordpress
+ * Plugin URI: https://websitesbuiltforyou.com/plugins/wordpress/easy-icon-grid
  * Description: Easily display grids of icons using shortcodes, widgets and Gutenberg blocks
  * Author: Websites Built For You
  * Author URI: https://websitesbuiltforyou.com

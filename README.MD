@@ -23,7 +23,7 @@ https://websitesbuiltforyou.com/plugins/wordpress/easy-icon-grid
 ## How To Use
 You can find full usage and installation instructions on the plugin homepage:
 
-https://websitesbuiltforyou.com/plugins/wordpress/easy-icon-grid-plugin
+https://websitesbuiltforyou.com/plugins/wordpress/easy-icon-grid
 
 You can also download a ready compiled installation zip file from here for the
 latest stable version.
