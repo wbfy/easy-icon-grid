@@ -11,7 +11,11 @@ License URI: https://www.gnu.org/licenses
 Easily display grids of icons using shortcodes, widgets and Gutenberg blocks
 
 == Description ==
-This plugin allows you to easily display 'feature' grids of icons and/or their descriptions using shortcodes, widgets and Gutenberg blocks.
+This plugin allows you to easily display 'feature' grids of icons and/or their descriptions
+using shortcodes, widgets and Gutenberg blocks.
+
+Grids can be used for many things, one example would be as a visually exciting way to
+present a list of features.
 
 = Features =
 
