@@ -13,36 +13,36 @@ gulp.task(
 	'compile.plugin',
 	function (doneCallBack) {
 		if (flags.production) {
-			gulp.src(['js/block.js'])
+			gulp.src(['src/js/block.js'])
 				.pipe(concat('easy-icon-grid-block.min.js'))
 				.pipe(uglify())
 				.pipe(gulp.dest('assets/js'));
-			gulp.src(['js/widget.js'])
+			gulp.src(['src/js/widget.js'])
 				.pipe(concat('easy-icon-grid-widget.min.js'))
 				.pipe(uglify())
 				.pipe(gulp.dest('assets/js'));
 		} else {
-			gulp.src(['js/block.js'])
+			gulp.src(['src/js/block.js'])
 				.pipe(concat('easy-icon-grid-block.min.js'))
 				.pipe(gulp.dest('assets/js'));
-			gulp.src(['js/widget.js'])
+			gulp.src(['src/js/widget.js'])
 				.pipe(concat('easy-icon-grid-widget.min.js'))
 				.pipe(gulp.dest('assets/js'));
 		}
 
-		gulp.src(['scss/admin.scss'])
+		gulp.src(['src/scss/admin.scss'])
 			.pipe(concat('easy-icon-grid-admin.min.css'))
-			.pipe(sass({ outputStyle: 'compressed', includePaths: ['scss'] }))
+			.pipe(sass({ outputStyle: 'compressed', includePaths: ['src/scss'] }))
 			.pipe(gulp.dest('assets/css'));
 
-		gulp.src(['scss/block-editor.scss'])
+		gulp.src(['src/scss/block-editor.scss'])
 			.pipe(concat('easy-icon-grid-block-editor.min.css'))
-			.pipe(sass({ outputStyle: 'compressed', includePaths: ['scss'] }))
+			.pipe(sass({ outputStyle: 'compressed', includePaths: ['src/scss'] }))
 			.pipe(gulp.dest('assets/css'));
 
-		gulp.src(['scss/frontend.scss'])
+		gulp.src(['src/scss/frontend.scss'])
 			.pipe(concat('easy-icon-grid-frontend.min.css'))
-			.pipe(sass({ outputStyle: 'compressed', includePaths: ['scss'] }))
+			.pipe(sass({ outputStyle: 'compressed', includePaths: ['src/scss'] }))
 			.pipe(gulp.dest('assets/css'));
 
 		doneCallBack();

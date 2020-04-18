@@ -18,7 +18,7 @@ class Templates
     public static function render($template, $data = array())
     {
         ob_start();
-        include PLUGIN_DIR . '/templates/' . $template;
+        include PLUGIN_DIR . '/src/templates/' . $template;
         return ob_get_clean();
     }
 }

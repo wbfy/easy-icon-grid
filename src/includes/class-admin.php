@@ -88,7 +88,7 @@ class Admin
             'easy_icon_grid_config_data',
             __('Configuration Data', 'easy-icon-grid'),
             array($this, 'config_data_section_header'),
-            'easy_icon_grid_settings',
+            'easy_icon_grid_settings'
         );
 
         add_settings_field(

@@ -18,15 +18,17 @@ his is a WordPress plugin to easily display icon grids using shortcodes, widgets
 * Responsive design;
 * Up to 15 icons per grid;
 * Unlimited grids per page;
+* Max columns per grid row can be set between 1 and 6;
+* Icon color can be set per grid;
 * Can be embedded via shortcode, widget or Gutenberg block;
 * By default uses font-awesome/5.13.0 to provide the icons;
-* Can be linked to any other online font including font-awesome kits;
+* Can be linked to any other online font including font-awesome kits.
 
 = How To Use =
 
 Full usage instructions can be found on the plugin homepage:
 
-https://websitesbuiltforyou.com/wordpress/easy-icon-grid-plugin-for-wordpress
+https://websitesbuiltforyou.com/wordpress/easy-icon-grid-plugin
 
 
 == Installation ==
