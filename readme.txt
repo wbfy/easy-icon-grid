@@ -11,7 +11,7 @@ License URI: https://www.gnu.org/licenses
 Easily display grids of icons using shortcodes, widgets and Gutenberg blocks
 
 == Description ==
-his is a WordPress plugin to easily display icon grids using shortcodes, widgets and Gutenberg blocks.
+This plugin allows you to easily display 'feature' grids of icons and/or their descriptions using shortcodes, widgets and Gutenberg blocks.
 
 = Features =
 
@@ -26,9 +26,9 @@ his is a WordPress plugin to easily display icon grids using shortcodes, widgets
 
 = How To Use =
 
-Full usage instructions can be found on the plugin homepage:
+You can find full usage instructions on the plugin homepage:
 
-https://websitesbuiltforyou.com/wordpress/easy-icon-grid-plugin
+https://websitesbuiltforyou.com/plugins/wordpress/easy-icon-grid-plugin
 
 
 == Installation ==
@@ -59,7 +59,7 @@ Yes, you can have an unlimited amount of icon grids on each page
 
 = How Many Icons (and desriptions) can I have in each grid
 
-The maximum number of icons you can have in each grid is currently 15
+The maximum number of icons you can have in each grid is currently 15 but you can have an unlimited amount of grids per page
 
 = How many columns are in the grid =
 
