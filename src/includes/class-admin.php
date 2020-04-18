@@ -3,6 +3,9 @@ namespace WBFY\EasyIconGrid;
 
 defined('ABSPATH') || exit;
 
+/**
+ * Dashboard options page handler
+ */
 class Admin
 {
     /**

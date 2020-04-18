@@ -17,16 +17,12 @@ Easily display icon grids using shortcodes, widgets and Gutenberg blocks
 https://websitesbuiltforyou.com/plugins/wordpress/easy-icon-grid
 
 ## How To Use
-Full usage instructions can be found on the plugin homepage:
+You can find full usage and installation instructions on the plugin homepage:
 
-https://websitesbuiltforyou.com/wordpress/easy-icon-grid-plugin
+https://websitesbuiltforyou.com/plugins/wordpress/easy-icon-grid-plugin
 
-## Installation
-You can download the latest stable pre-compiled plugin installation (.zip) file at:
-
-https://websitesbuiltforyou.com/wordpress/easy-icon-grid
-
-The WordPress codex has [instructions on how to install plugins from zip file](https://wordpress.org/support/article/managing-plugins/#manual-plugin-installation).
+You can also download a ready compiled installation zip file from here for the
+latest stable version.
 
 ## Contributors
 Steve Perkins

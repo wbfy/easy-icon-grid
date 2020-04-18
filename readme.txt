@@ -32,6 +32,7 @@ https://websitesbuiltforyou.com/wordpress/easy-icon-grid-plugin
 
 
 == Installation ==
+
 = Automatic installation =
 
 Automatic installation is the easiest way to install this plugin.
@@ -51,6 +52,7 @@ The WordPress codex has [instructions on how to do this](https://wordpress.org/s
 
 
 == Frequently Asked Questions ==
+
 = Can I use multiple grids of icons on the same page =
 
 Yes, you can have an unlimited amount of icon grids on each page
