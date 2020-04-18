@@ -2,11 +2,16 @@
     .wbfy-title {
         margin-bottom:0.4em;
     }
-    ul {
+    /**
+     * override theme settings for ul margin and padding as it
+     * almost always looks wrong with the grid
+     */
+    ul.wbfy-ul {
+        padding-left:0;
+        padding-right:0;
+        margin-left:0;
+        margin-right:0;
         list-style:none;
-        padding:0;
-        margin:0;
-        // text-align:center;
         li {
             display:inline-block;
             background-color:transparent;

@@ -138,7 +138,7 @@
 		}
 		return el('div', { className: [props.className, 'wbfy-grid'].join(' ') },
 			el(props.attributes.titleTag, { className: ['wbfy-title', 'wbfy-' + props.attributes.titleAlign].join(' ') }, props.attributes.title),
-			el('ul', { className: 'wbfy-' + props.attributes.titleAlign }, grid)
+			el('ul', { className: 'wbfy-ul wbfy-' + props.attributes.titleAlign }, grid)
 		);
 	}
 

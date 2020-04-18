@@ -31,7 +31,7 @@ for ($i = 1; $i <= MAX_ITEMS; $i++) {
         $icon_list .= '</div></li>';
     }
 }
-$html .= (!empty($icon_list)) ? '<ul class="' . $align . '">' . $icon_list . '</ul>' : '';
+$html .= (!empty($icon_list)) ? '<ul class="wbfy-ul ' . $align . '">' . $icon_list . '</ul>' : '';
 
 $html .= '</div>';
 echo $html;
