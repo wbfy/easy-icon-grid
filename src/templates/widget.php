@@ -24,25 +24,6 @@ defined('ABSPATH') || exit;
 	>
 </p>
 <p class="wbfy-widget-p">
-	<label for=”<?php echo $data['widget']->get_field_id('title_align'); ?>”><?php _e('Title Alignment:', 'easy-icon-grid');?></label>
-	<select
-		id="<?php echo $data['widget']->get_field_id('title_align'); ?>"
-		title="<?php _e('Title alignment', 'easy-icon-grid');?>"
-		name="<?php echo $data['widget']->get_field_name('title_align'); ?>"
-		class="widefat"
-	>
-		<option value="left"<?php echo ($data['content']['title_align'] == 'left') ? ' selected' : ''; ?> >
-			<?php echo _e('Aligned Left', 'easy-icon-grid'); ?>
-		</option>
-		<option value="right"<?php echo ($data['content']['title_align'] == 'right') ? ' selected' : ''; ?> >
-			<?php echo _e('Aligned Right', 'easy-icon-grid'); ?>
-		</option>
-		<option value="center"<?php echo ($data['content']['title_align'] == 'center') ? ' selected' : ''; ?> >
-			<?php echo _e('Centered', 'easy-icon-grid'); ?>
-		</option>
-	</select>
-</p>
-<p class="wbfy-widget-p">
 	<label for=”<?php echo $data['widget']->get_field_id('title_tag'); ?>”><?php _e('Title Tag:', 'easy-icon-grid');?></label>
 	<select
 		id="<?php echo $data['widget']->get_field_id('title_tag'); ?>"
@@ -64,6 +45,25 @@ defined('ABSPATH') || exit;
 		</option>
 		<option value="h4"<?php echo ($data['content']['title_tag'] == 'h4') ? ' selected' : ''; ?> >
 			<?php echo _e('Hading 4', 'easy-icon-grid'); ?>
+		</option>
+	</select>
+</p>
+<p class="wbfy-widget-p">
+	<label for=”<?php echo $data['widget']->get_field_id('title_align'); ?>”><?php _e('Alignment:', 'easy-icon-grid');?></label>
+	<select
+		id="<?php echo $data['widget']->get_field_id('title_align'); ?>"
+		title="<?php _e('Alignment', 'easy-icon-grid');?>"
+		name="<?php echo $data['widget']->get_field_name('title_align'); ?>"
+		class="widefat"
+	>
+		<option value="left"<?php echo ($data['content']['title_align'] == 'left') ? ' selected' : ''; ?> >
+			<?php echo _e('Left', 'easy-icon-grid'); ?>
+		</option>
+		<option value="right"<?php echo ($data['content']['title_align'] == 'right') ? ' selected' : ''; ?> >
+			<?php echo _e('Right', 'easy-icon-grid'); ?>
+		</option>
+		<option value="center"<?php echo ($data['content']['title_align'] == 'center') ? ' selected' : ''; ?> >
+			<?php echo _e('Center', 'easy-icon-grid'); ?>
 		</option>
 	</select>
 </p>
