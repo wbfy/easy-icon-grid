@@ -35,11 +35,6 @@ gulp.task(
 			.pipe(sass({ outputStyle: 'compressed', includePaths: ['src/scss'] }))
 			.pipe(gulp.dest('assets/css'));
 
-		gulp.src(['src/scss/block-editor.scss'])
-			.pipe(concat('easy-icon-grid-block-editor.min.css'))
-			.pipe(sass({ outputStyle: 'compressed', includePaths: ['src/scss'] }))
-			.pipe(gulp.dest('assets/css'));
-
 		gulp.src(['src/scss/frontend.scss'])
 			.pipe(concat('easy-icon-grid-frontend.min.css'))
 			.pipe(sass({ outputStyle: 'compressed', includePaths: ['src/scss'] }))

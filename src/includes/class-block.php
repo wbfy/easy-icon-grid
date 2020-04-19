@@ -49,13 +49,6 @@ class Block
         // Translations for script
         wp_set_script_translations('easy-icon-grid-block-js', 'easy-icon-grid');
 
-        wp_register_style(
-            'easy-icon-grid-block-editor-css',
-            plugins_url('/easy-icon-grid/assets/css/easy-icon-grid-block-editor.min.css'),
-            array('wp-edit-blocks'),
-            VERSION
-        );
-
         Grid::register_font();
 
         register_block_type(

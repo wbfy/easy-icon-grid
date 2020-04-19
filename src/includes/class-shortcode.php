@@ -8,7 +8,7 @@ defined('ABSPATH') || exit;
 
 class Shortcode
 {
-    private $content = [];
+    private $content = array();
 
     /**
      * Initialise shortcodes

@@ -134,11 +134,11 @@
 			var contentText = ('preview' == displayMode)
 				? i18n.__('Use the Block Inspector on the right to update the Easy Icon Grid content', 'easy-icon-grid')
 				: i18n.__('# Easy Icon Grid - Empty Block #', 'easy-icon-grid');
-			return el('p', { className: [props.className, 'wbfy-center', 'wbfy-grid'].join(' ') }, contentText);
+			return el('p', { className: [props.className, 'eig-center', 'eig-grid'].join(' ') }, contentText);
 		}
-		return el('div', { className: [props.className, 'wbfy-grid'].join(' ') },
-			el(props.attributes.titleTag, { className: ['wbfy-title', 'wbfy-' + props.attributes.titleAlign].join(' ') }, props.attributes.title),
-			el('ul', { className: 'wbfy-ul wbfy-' + props.attributes.titleAlign }, grid)
+		return el('div', { className: [props.className, 'easy-icon-grid'].join(' ') },
+			el(props.attributes.titleTag, { className: 'eig-' + props.attributes.titleAlign }, props.attributes.title),
+			el('ul', { className: 'eig-grid eig-' + props.attributes.titleAlign }, grid)
 		);
 	}
 
@@ -164,14 +164,14 @@
 	function gridCell(props, itemNo) {
 		var iconClass = eigSettings.font.class_prefix + props.attributes['icon' + itemNo];
 
-		return el('li', { className: 'wbfy-cols-' + props.attributes.maxCols },
-			el('div', { className: 'wbfy-grid-icon' },
+		return el('li', { className: 'eig-cols-' + props.attributes.maxCols },
+			el('div', { className: 'eig-icon' },
 				el('span', {
-					className: [iconClass, 'wbfy-' + props.attributes.iconSize].join(' '),
+					className: [iconClass, 'eig-' + props.attributes.iconSize].join(' '),
 					style: { color: props.attributes.iconColor }
 				}, '')
 			),
-			el('div', { className: 'wbfy-grid-text' }, props.attributes['text' + itemNo])
+			el('div', { className: 'eig-text' }, props.attributes['text' + itemNo])
 		);
 	}
 

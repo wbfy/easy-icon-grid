@@ -6,7 +6,7 @@ namespace WBFY\EasyIconGrid;
 
 defined('ABSPATH') || exit;
 ?>
-<div class="wrap wbfy-admin">
+<div class="wrap eig-admin">
 	<h1>
 		<?php _e('Configure Easy Icon Grid', 'easy-icon-grid');?>
 	</h1>
