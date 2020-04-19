@@ -16,8 +16,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Minor backwards compatibility changes for the WordPress 5.0 block API
 - Changes to documentation and readme files
 - Changed alignment to include whole grid not just title
-- Override theme margin and padding for UL as most of the time it causes the grid to look mis-aligned!
 
 ## [1.0.2] - 2020-04-18
 ### Updated
-- Override theme margin and padding for UL as most of the time it causes the grid to look mis-aligned!
+- Override theme margin and padding for UL as it can often cause grids to look unbalanced on page
+
+## [1.0.3] - 2020-04-19
+### Updated
+- Change CSS 'namespace' to .easy-icon-grid
+- Simplify and remove unnecessary SCSS

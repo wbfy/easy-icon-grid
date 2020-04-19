@@ -5,9 +5,9 @@
 (function ($) {
 	$(document).ready(function () {
 		if ($.fn.wpColorPicker) {
-			$('.wbfy-color-picker').wpColorPicker({
+			$('.eig-color-picker').wpColorPicker({
 				change: function () {
-					setTimeout(function () { $('.wbfy-color-picker').trigger('change'); }, 500);
+					setTimeout(function () { $('.eig-color-picker').trigger('change'); }, 500);
 				}
 			});
 		}

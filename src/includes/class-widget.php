@@ -10,7 +10,7 @@ defined('ABSPATH') || exit;
 
 class Widget extends WP_Widget
 {
-    private $content = [];
+    private $content = array();
 
     /***
      * Set widget info

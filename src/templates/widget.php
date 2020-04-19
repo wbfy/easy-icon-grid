@@ -7,13 +7,13 @@ namespace WBFY\EasyIconGrid;
 defined('ABSPATH') || exit;
 ?>
 <style>
-	.wbfy-widget-h3 { margin-bottom:0;text-align:center }
-	.wbfy-widget-p { margin-bottom:0;margin-top:5px }
+	.eig-widget-h3 { margin-bottom:0;text-align:center }
+	.eig-widget-p { margin-bottom:0;margin-top:5px }
 </style>
-<h3 class="wbfy-widget-h3">
+<h3 class="eig-widget-h3">
 	<?php echo _e('Grid', 'easy-icon-grid'); ?>:
 </h3>
-<p class="wbfy-widget-p">
+<p class="eig-widget-p">
 	<label for=”<?php echo $data['widget']->get_field_id('title'); ?>”><?php _e('Title:', 'easy-icon-grid');?></label>
 	<input
 		type="text"
@@ -23,7 +23,7 @@ defined('ABSPATH') || exit;
 		class="widefat"
 	>
 </p>
-<p class="wbfy-widget-p">
+<p class="eig-widget-p">
 	<label for=”<?php echo $data['widget']->get_field_id('title_tag'); ?>”><?php _e('Title Tag:', 'easy-icon-grid');?></label>
 	<select
 		id="<?php echo $data['widget']->get_field_id('title_tag'); ?>"
@@ -48,7 +48,7 @@ defined('ABSPATH') || exit;
 		</option>
 	</select>
 </p>
-<p class="wbfy-widget-p">
+<p class="eig-widget-p">
 	<label for=”<?php echo $data['widget']->get_field_id('title_align'); ?>”><?php _e('Alignment:', 'easy-icon-grid');?></label>
 	<select
 		id="<?php echo $data['widget']->get_field_id('title_align'); ?>"
@@ -67,7 +67,7 @@ defined('ABSPATH') || exit;
 		</option>
 	</select>
 </p>
-<p class="wbfy-widget-p">
+<p class="eig-widget-p">
 	<label for=”<?php echo $data['widget']->get_field_id('max_cols'); ?>”><?php _e('Max Columns:', 'easy-icon-grid');?></label>
 	<select
 		id="<?php echo $data['widget']->get_field_id('max_cols'); ?>"
@@ -95,10 +95,10 @@ defined('ABSPATH') || exit;
 		</option>
 	</select>
 </p>
-<h3 class="wbfy-widget-h3">
+<h3 class="eig-widget-h3">
 	<?php echo _e('Icons', 'easy-icon-grid'); ?>:
 </h3>
-<p class="wbfy-widget-p">
+<p class="eig-widget-p">
 	<label for=”<?php echo $data['widget']->get_field_id('icon_size'); ?>”><?php _e('Size:', 'easy-icon-grid');?></label>
 	<select
 		id="<?php echo $data['widget']->get_field_id('icon_size'); ?>"
@@ -123,13 +123,13 @@ defined('ABSPATH') || exit;
 		</option>
 	</select>
 </p>
-<p class="wbfy-widget-p">
+<p class="eig-widget-p">
 	<div>
 		<label for=”<?php echo $data['widget']->get_field_id('icon_color'); ?>”><?php _e('Color:', 'easy-icon-grid');?></label>
 	</div>
 	<input
 		type="text"
-		class="wbfy-color-picker widefat"
+		class="eig-color-picker widefat"
 		id="<?php echo $data['widget']->get_field_id('icon_color'); ?>"
 		name="<?php echo $data['widget']->get_field_name('icon_color'); ?>"
 		data-default-color="<?php echo esc_attr($data['content']['icon_color']); ?>"
@@ -139,10 +139,10 @@ defined('ABSPATH') || exit;
 <?php
 for ($i = 1; $i <= MAX_ITEMS; $i++) {
     ?>
-<h3 class="wbfy-widget-h3">
+<h3 class="eig-widget-h3">
 	<?php echo _e('Icon ' . $i, 'easy-icon-grid'); ?>:
 </h3>
-<p class="wbfy-widget-p">
+<p class="eig-widget-p">
 	<label for=”<?php echo $data['widget']->get_field_id('item' . $i . '_icon'); ?>”><?php _e('Class:', 'easy-icon-grid');?></label>
 	<input
 		type="text"
@@ -153,7 +153,7 @@ for ($i = 1; $i <= MAX_ITEMS; $i++) {
 		class="widefat"
 	>
 </p>
-<p class="wbfy-widget-p">
+<p class="eig-widget-p">
 	<label for=”<?php echo $data['widget']->get_field_id('item' . $i . '_text'); ?>”><?php _e('Text:', 'easy-icon-grid');?></label>
 	<input
 		type="text"

@@ -1,5 +1,18 @@
-.wbfy-clearfix:before,
-.wbfy-clearfix:after
+.eig-bold
+{
+    font-weight:bold;
+}
+.eig-center {
+    text-align: center;
+}
+.eig-right {
+    text-align: right;
+}
+.eig-left {
+    text-align: left;
+}
+.eig-clearfix:before,
+.eig-clearfix:after
 {
     content: '\0020';
     display: block;
@@ -8,24 +21,11 @@
     visibility: hidden;
     width: 0;
 }
-.wbfy-clearfix:after
+.eig-clearfix:after
 {
     clear: both;
 }
-.wbfy-clearfix
+.eig-clearfix
 {
     zoom: 1;
-}
-.wbfy-bold
-{
-    font-weight:bold;
-}
-.wbfy-center {
-    text-align: center;
-}
-.wbfy-right {
-    text-align: right;
-}
-.wbfy-left {
-    text-align: left;
 }
