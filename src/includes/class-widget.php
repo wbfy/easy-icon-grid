@@ -1,127 +1,138 @@
 <?php
 /**
  * Widget handler
+ *
+ * @package easy-icon-grid
+ *
+ * @phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped
  */
+
 namespace WBFY\EasyIconGrid;
 
 use WP_Widget;
 
-defined('ABSPATH') || exit;
+defined( 'ABSPATH' ) || exit;
 
-class Widget extends WP_Widget
-{
-    private $content = array();
+/**
+ * Parse and render widgets
+ */
+class Widget extends WP_Widget {
 
-    /***
-     * Set widget info
-     */
-    public function __construct()
-    {
-        parent::__construct(
-            'easy_icon_grid',
-            __('Easy Icon Grid', 'easy-icon-grid'),
-            array(
-                'description' => __('Add an icon grid', 'easy-icon-grid'),
-            )
-        );
-    }
+	/**
+	 * Private widget variables
+	 *
+	 * @var array $content list of widget parameters
+	 */
+	private $content = array();
 
-    /**
-     * Initialise and register widget
-     */
-    public function init()
-    {
-        register_widget($this);
-    }
+	/***
+	 * Set widget info
+	 */
+	public function __construct() {
+		parent::__construct(
+			'easy_icon_grid',
+			__( 'Easy Icon Grid', 'easy-icon-grid' ),
+			array(
+				'description' => __( 'Add an icon grid', 'easy-icon-grid' ),
+			)
+		);
+	}
 
-    /**
-     * Show widget content
-     *
-     * @param array $args passed from the WP_Widget parent
-     * @param array $instance content for instance from parent
-     */
-    public function widget($args, $instance)
-    {
-        if (empty($instance)) {
-            $instance = Grid::default_props();
-        }
-        echo Grid::render($instance);
-    }
+	/**
+	 * Initialise and register widget
+	 */
+	public function init() {
+		register_widget( $this );
+	}
 
-    /**
-     * Widget form
-     *
-     * @param array $instance content for instance from parent
-     */
-    public function form($instance)
-    {
-        // Add widget color picker
-        wp_enqueue_script(
-            'easy-icon-grid-widget-js',
-            plugins_url('/easy-icon-grid/assets/js/easy-icon-grid-widget.min.js'),
-            array('wp-color-picker'), false, true
-        );
-        wp_enqueue_style('wp-color-picker');
+	/**
+	 * Show widget content
+	 *
+	 * @param array $args passed from the WP_Widget parent
+	 * @param array $content parameters for instance from parent
+	 */
+	public function widget( $args, $content ) {
+		if ( empty( $content ) ) {
+			$content = Grid::default_props();
+		}
+		// Grid output is already escaped.
+		echo Grid::render( $content );
+	}
 
-        if (!$instance) {
-            $instance = Grid::default_props();
-        }
+	/**
+	 * Widget form
+	 *
+	 * @param array $content parameters for instance from parent
+	 */
+	public function form( $content ) {
+		// Add widget color picker
+		wp_enqueue_script(
+			'easy-icon-grid-widget-js',
+			plugins_url( '/easy-icon-grid/assets/js/easy-icon-grid-widget.min.js' ),
+			array( 'wp-color-picker' ),
+			VERSION,
+			true
+		);
+		wp_enqueue_style( 'wp-color-picker' );
 
-        echo Templates::render(
-            'widget.php',
-            array(
-                'settings' => Settings::instance(),
-                'content'  => $instance,
-                'widget'   => $this,
-            )
-        );
-    }
+		if ( ! $content ) {
+			$content = Grid::default_props();
+		}
 
-    /**
-     * Parse and update widget contents
-     *
-     * @param array $updated updated widget content
-     * @param array $old old widget content
-     * @return array $new new widget content from form input
-     */
-    public function update($updated, $old)
-    {
-        echo 'update';
-        $new = Grid::default_props();
+		// Template output is already escaped.
+		echo Templates::render(
+			'widget.php',
+			array(
+				'settings' => Settings::instance(),
+				'content'  => $content,
+				'widget'   => $this,
+			)
+		);
+	}
 
-        if (isset($updated['title'])) {
-            $new['title'] = sanitize_text_field($updated['title']);
-        }
+	/**
+	 * Parse and update widget contents
+	 *
+	 * @param array $updated updated widget content
+	 * @param array $old old widget content
+	 * @return array $new new widget content from form input
+	 */
+	public function update( $updated, $old ) {
+		$new = Grid::default_props();
 
-        if (isset($updated['title_align'])) {
-            $new['title_align'] = sanitize_text_field($updated['title_align']);
-        }
+		if ( isset( $updated['title'] ) ) {
+			$new['title'] = sanitize_text_field( $updated['title'] );
+		}
 
-        if (isset($updated['title_tag'])) {
-            $new['title_tag'] = sanitize_text_field($updated['title_tag']);
-        }
+		if ( isset( $updated['title_align'] ) ) {
+			$new['title_align'] = sanitize_text_field( $updated['title_align'] );
+		}
 
-        if (isset($updated['icon_color'])) {
-            $new['icon_color'] = sanitize_text_field($updated['icon_color']);
-        }
+		if ( isset( $updated['title_tag'] ) ) {
+			$new['title_tag'] = sanitize_text_field( $updated['title_tag'] );
+		}
 
-        if (isset($updated['icon_size'])) {
-            $new['icon_size'] = sanitize_text_field($updated['icon_size']);
-        }
+		if ( isset( $updated['icon_color'] ) ) {
+			$new['icon_color'] = sanitize_text_field( $updated['icon_color'] );
+		}
 
-        if (isset($updated['max_cols'])) {
-            $new['max_cols'] = sanitize_text_field($updated['max_cols']);
-        }
+		if ( isset( $updated['icon_size'] ) ) {
+			$new['icon_size'] = sanitize_text_field( $updated['icon_size'] );
+		}
 
-        for ($i = 1; $i <= MAX_ITEMS; $i++) {
-            if (isset($updated['item' . $i . '_icon'])) {
-                $new['item' . $i . '_icon'] = sanitize_text_field($updated['item' . $i . '_icon']);
-            }
+		if ( isset( $updated['max_cols'] ) ) {
+			$new['max_cols'] = sanitize_text_field( $updated['max_cols'] );
+		}
 
-            if (isset($updated['item' . $i . '_text'])) {
-                $new['item' . $i . '_text'] = sanitize_text_field($updated['item' . $i . '_text']);
-            }
-        }
-        return $new;
-    }
+		for ( $i = 1; $i <= MAX_ITEMS; $i++ ) {
+			if ( isset( $updated[ 'item' . $i . '_icon' ] ) ) {
+				$new[ 'item' . $i . '_icon' ] = sanitize_text_field( $updated[ 'item' . $i . '_icon' ] );
+			}
+
+			if ( isset( $updated[ 'item' . $i . '_text' ] ) ) {
+				$new[ 'item' . $i . '_text' ] = sanitize_text_field( $updated[ 'item' . $i . '_text' ] );
+			}
+		}
+		return $new;
+	}
 }

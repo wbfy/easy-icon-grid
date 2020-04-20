@@ -1,104 +1,106 @@
 <?php
 /**
  * Output widget and shortcode html content for grid
+ *
+ * @package easy-icon-grid
  */
+
 namespace WBFY\EasyIconGrid;
 
-defined('ABSPATH') || exit;
+defined( 'ABSPATH' ) || exit;
 
-class Grid
-{
-    const FONT_ID = 'easy-icon-grid-font';
+/**
+ * Grid content/display (widgets and shortcodes
+ */
+class Grid {
 
-    /**
-     * Render icon grid html
-     *
-     * @param array $content grid content
-     */
-    public static function render($content)
-    {
-        Grid::register_styles();
-        Grid::register_font();
+	const FONT_ID = 'easy-icon-grid-font';
 
-        return Templates::render(
-            'grid.php',
-            array(
-                'content'  => $content,
-                'settings' => Settings::instance(),
-            )
-        );
-    }
+	/**
+	 * Render icon grid html
+	 *
+	 * @param array $content grid content
+	 */
+	public static function render( $content ) {
+		self::register_styles();
+		self::register_font();
 
-    /**
-     * Default grid properties
-     *
-     * @return array $template list of default properties
-     */
-    public static function default_props()
-    {
-        $template = array(
-            'title'       => '',
-            'title_align' => DEFAULT_TITLE_ALIGN,
-            'title_tag'   => DEFAULT_TITLE_TAG,
-            'icon_color'  => DEFAULT_ICON_COLOR,
-            'icon_size'   => DEFAULT_ICON_SIZE,
-            'max_cols'    => DEFAULT_MAX_COLS,
-        );
+		return Templates::render(
+			'grid.php',
+			array(
+				'content'  => $content,
+				'settings' => Settings::instance(),
+			)
+		);
+	}
 
-        for ($i = 1; $i <= MAX_ITEMS; $i++) {
-            $template['item' . $i . '_icon'] = '';
-            $template['item' . $i . '_text'] = '';
-        }
+	/**
+	 * Default grid properties
+	 *
+	 * @return array $template list of default properties
+	 */
+	public static function default_props() {
+		$template = array(
+			'title'       => '',
+			'title_align' => DEFAULT_TITLE_ALIGN,
+			'title_tag'   => DEFAULT_TITLE_TAG,
+			'icon_color'  => DEFAULT_ICON_COLOR,
+			'icon_size'   => DEFAULT_ICON_SIZE,
+			'max_cols'    => DEFAULT_MAX_COLS,
+		);
 
-        return $template;
-    }
+		for ( $i = 1; $i <= MAX_ITEMS; $i++ ) {
+			$template[ 'item' . $i . '_icon' ] = '';
+			$template[ 'item' . $i . '_text' ] = '';
+		}
 
-    /**
-     * Register font style or script link
-     * The link can be a .js script or .css file
-     *
-     * @param boolean $enqueue whether to engueue the font loader as well as register it
-     */
-    public static function register_font($enqueue = true)
-    {
-        $settings = Settings::instance();
+		return $template;
+	}
 
-        if (preg_match('/\.js$/', $settings->font['url'])) {
-            wp_register_script(self::FONT_ID, $settings->font['url']);
-            if ($enqueue) {
-                wp_enqueue_script(self::FONT_ID);
-            }
-        } else {
-            wp_register_style(self::FONT_ID, $settings->font['url']);
-            if ($enqueue) {
-                wp_enqueue_style(self::FONT_ID);
-            }
-        }
-    }
+	/**
+	 * Register font style or script link
+	 * The link can be a .js script or .css file
+	 *
+	 * @param boolean $enqueue whether to engueue the font loader as well as register it
+	 */
+	public static function register_font( $enqueue = true ) {
+		$settings = Settings::instance();
 
-    /**
-     * Register CSS styles for grid
-     *
-     * @param boolean $enqueue whether to engueue the style as well as register it
-     * @return $id the ID used for the registered style
-     */
-    public static function register_styles($enqueue = true)
-    {
-        $id = 'easy-icon-grid-frontend-css';
+		if ( preg_match( '/\.js$/', $settings->font['url'] ) ) {
+			wp_register_script( self::FONT_ID, $settings->font['url'] );
+			if ( $enqueue ) {
+				wp_enqueue_script( self::FONT_ID );
+			}
+		} else {
+			wp_register_style( self::FONT_ID, $settings->font['url'] );
+			if ( $enqueue ) {
+				wp_enqueue_style( self::FONT_ID );
+			}
+		}
+	}
 
-        // Frontend CSS
-        wp_register_style(
-            $id,
-            plugins_url('/easy-icon-grid/assets/css/easy-icon-grid-frontend.min.css'),
-            null,
-            VERSION
-        );
+	/**
+	 * Register CSS styles for grid
+	 *
+	 * @param boolean $enqueue whether to engueue the style as well as register it
+	 * @return $id the ID used for the registered style
+	 */
+	public static function register_styles( $enqueue = true ) {
+		$id = 'easy-icon-grid-frontend-css';
 
-        if ($enqueue) {
-            wp_enqueue_style($id);
-        }
+		// Frontend CSS
+		wp_register_style(
+			$id,
+			plugins_url( '/easy-icon-grid/assets/css/easy-icon-grid-frontend.min.css' ),
+			null,
+			VERSION
+		);
 
-        return $id;
-    }
+		if ( $enqueue ) {
+			wp_enqueue_style( $id );
+		}
+
+		return $id;
+	}
 
 }

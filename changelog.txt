@@ -25,3 +25,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Updated
 - Change CSS 'namespace' to .easy-icon-grid
 - Simplify and remove unnecessary SCSS
+
+## [1.0.4] - 2020-04-19
+### Added
+- Compliance to WordPress PHP coding standards
+- Better PHPdoc commenting and documentation
+### Updated
+- Minor bug fixes

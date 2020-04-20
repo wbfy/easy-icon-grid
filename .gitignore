@@ -3,3 +3,6 @@ node_modules
 dist
 build.ps1
 debug.log
+vendor
+composer.json
+composer.lock
