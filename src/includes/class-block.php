@@ -1,6 +1,6 @@
 <?php
 /**
- * Gutenberg editor block handler
+ * Easy Icon Grid Gutenberg block editor handler
  *
  * @package easy-icon-grid
  */
@@ -10,7 +10,7 @@ namespace WBFY\EasyIconGrid;
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Block editor controller
+ * (Guten)Block class
  */
 class Block {
 
@@ -30,9 +30,10 @@ class Block {
 			'easy-icon-grid-block-js',
 			plugins_url( '/easy-icon-grid/assets/js/easy-icon-grid-block.min.js' ),
 			array( 'wp-blocks', 'wp-editor', 'wp-components', 'wp-i18n', 'wp-element' ),
-			VERSION
+			VERSION,
+			false
 		);
-		// Pass settings to script
+		// Pass settings to script.
 		wp_localize_script(
 			'easy-icon-grid-block-js',
 			'eigSettings',
@@ -50,7 +51,7 @@ class Block {
 				Settings::instance()->get_all()
 			)
 		);
-		// Translations for script
+		// Translations for script.
 		wp_set_script_translations( 'easy-icon-grid-block-js', 'easy-icon-grid' );
 
 		Grid::register_font();

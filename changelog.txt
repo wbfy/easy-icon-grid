@@ -19,7 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.2] - 2020-04-18
 ### Updated
-- Override theme margin and padding for UL as it can often cause grids to look unbalanced on page
+- Override theme side margin and padding for UL as it can make grids look unbalanced
 
 ## [1.0.3] - 2020-04-19
 ### Updated
@@ -29,6 +29,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.4] - 2020-04-19
 ### Added
 - Compliance to WordPress PHP coding standards
-- Better PHPdoc commenting and documentation
+- Better PHPDoc commenting and documentation
 ### Updated
 - Minor bug fixes
+
+## [1.0.5] - 2020-04-21
+### Updated
+- improved PHPDoc comments
+- Added phpcs:disable around output function calls where the output is already escaped
+- Replaced raw inline HTML control tags with Html class calls for consistency
+- Moved escaping from parameter array to Html class
+- Changed default title_tag to h2
+- Include plugin version in global settings
+- Override theme side margin and padding for LI as it can cause columns to overspill

@@ -4,8 +4,6 @@
  * Used by shortcode and widget
  *
  * @package easy-icon-grid
- *
- * @phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped
  */
 
 namespace WBFY\EasyIconGrid;
@@ -40,5 +38,6 @@ $html .= ( ! empty( $icon_list ) ) ? '<ul class="eig-grid ' . $align . '">' . $i
 
 $html .= '</div>';
 
-// Already escaped.
+// @phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped -- already escaped
 echo $html;
+// @phpcs:enable

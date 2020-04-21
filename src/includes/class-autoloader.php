@@ -24,11 +24,11 @@ class Autoloader {
 	/**
 	 * Dynamically autoload classes as needed
 	 *
-	 * @param string $class class to be autoloaded
+	 * @param string $class class to be autoloaded.
 	 */
 	public static function autoload( $class ) {
 		$prefix = __NAMESPACE__ . '\\';
-		if ( $prefix !== substr( $class, 0, strlen( $prefix ) ) ) {
+		if ( substr( $class, 0, strlen( $prefix ) ) !== $prefix ) {
 			return;
 		}
 

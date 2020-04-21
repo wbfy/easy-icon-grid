@@ -1,10 +1,8 @@
 <?php
 /**
- * Widget handler
+ * Easy Icon Grid widget handler
  *
  * @package easy-icon-grid
- *
- * @phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped
  */
 
 namespace WBFY\EasyIconGrid;
@@ -14,7 +12,7 @@ use WP_Widget;
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Parse and render widgets
+ * Widget class
  */
 class Widget extends WP_Widget {
 
@@ -48,24 +46,26 @@ class Widget extends WP_Widget {
 	/**
 	 * Show widget content
 	 *
-	 * @param array $args passed from the WP_Widget parent
-	 * @param array $content parameters for instance from parent
+	 * @param array $args passed from the WP_Widget parent.
+	 * @param array $content parameters for instance from parent.
 	 */
 	public function widget( $args, $content ) {
 		if ( empty( $content ) ) {
 			$content = Grid::default_props();
 		}
-		// Grid output is already escaped.
+
+		// @phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped -- already escaped
 		echo Grid::render( $content );
+		// @phpcs:enable
 	}
 
 	/**
 	 * Widget form
 	 *
-	 * @param array $content parameters for instance from parent
+	 * @param array $content parameters for instance from parent.
 	 */
 	public function form( $content ) {
-		// Add widget color picker
+		// Add widget color picker.
 		wp_enqueue_script(
 			'easy-icon-grid-widget-js',
 			plugins_url( '/easy-icon-grid/assets/js/easy-icon-grid-widget.min.js' ),
@@ -79,7 +79,7 @@ class Widget extends WP_Widget {
 			$content = Grid::default_props();
 		}
 
-		// Template output is already escaped.
+		// @phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped -- already escaped
 		echo Templates::render(
 			'widget.php',
 			array(
@@ -88,14 +88,15 @@ class Widget extends WP_Widget {
 				'widget'   => $this,
 			)
 		);
+		// @phpcs:enable
 	}
 
 	/**
 	 * Parse and update widget contents
 	 *
-	 * @param array $updated updated widget content
-	 * @param array $old old widget content
-	 * @return array $new new widget content from form input
+	 * @param array $updated updated widget content.
+	 * @param array $old old widget content.
+	 * @return array $new new widget content from form input.
 	 */
 	public function update( $updated, $old ) {
 		$new = Grid::default_props();

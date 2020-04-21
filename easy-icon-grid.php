@@ -5,7 +5,7 @@
  * Description: Easily display grids of icons using shortcodes, widgets and Gutenberg blocks
  * Author: Websites Built For You
  * Author URI: https://websitesbuiltforyou.com
- * Version: 1.0.4
+ * Version: 1.0.5
  * License: GPLv2 or later
  * License URI: https://www.gnu.org/licenses
  * Text Domain: wbfy-easy-icon-grid
@@ -34,10 +34,10 @@ namespace WBFY\EasyIconGrid;
 defined( 'ABSPATH' ) || exit;
 
 if ( ! class_exists( '\WBFY\EasyIconGrid\Controller' ) ) {
-	define( 'WBFY\EasyIconGrid\VERSION', '1.0.4' );
+	define( 'WBFY\EasyIconGrid\VERSION', '1.0.5' );
 	define( 'WBFY\EasyIconGrid\PLUGIN_DIR', untrailingslashit( plugin_dir_path( __FILE__ ) ) );
 	define( 'WBFY\EasyIconGrid\MAX_ITEMS', 15 );
-	define( 'WBFY\EasyIconGrid\DEFAULT_TITLE_TAG', 'h3' );
+	define( 'WBFY\EasyIconGrid\DEFAULT_TITLE_TAG', 'h2' );
 	define( 'WBFY\EasyIconGrid\DEFAULT_TITLE_ALIGN', 'center' );
 	define( 'WBFY\EasyIconGrid\DEFAULT_ICON_COLOR', '#ffa500' );
 	define( 'WBFY\EasyIconGrid\DEFAULT_ICON_SIZE', 'large' );

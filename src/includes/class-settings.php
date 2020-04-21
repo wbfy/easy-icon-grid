@@ -1,6 +1,6 @@
 <?php
 /**
- * Singleton global plugin settings handler
+ * Singleton global plugin settings model handler
  *
  * @package easy-icon-grid
  */
@@ -10,7 +10,7 @@ namespace WBFY\EasyIconGrid;
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Manage settings model
+ * Settings class
  */
 class Settings {
 
@@ -45,17 +45,19 @@ class Settings {
 		$this->init_defaults();
 		$settings = get_option( 'easy_icon_grid' );
 		if ( is_array( $settings ) ) {
-			$this->list = Arrays::extend(
-				$this->list,
-				$settings
-			);
+			$this->list = Arrays::extend( $this->list, $settings );
+		}
+		// Deal with version updates.
+		if ( VERSION !== $this->list['version'] ) {
+			$this->list['version'] = VERSION;
+			update_option( 'easy_icon_grid', $this->list );
 		}
 	}
 
 	/**
 	 * Magic check option exists
 	 *
-	 * @param string $option option name
+	 * @param string $option option name.
 	 */
 	public function __isset( $option ) {
 		return ( isset( $this->list[ $option ] ) ) ? true : false;
@@ -64,8 +66,8 @@ class Settings {
 	/**
 	 * Magic option getter
 	 *
-	 * @param string $option option name
-	 * @return mixed option value
+	 * @param string $option option name.
+	 * @return mixed option value.
 	 */
 	public function __get( $option ) {
 		return ( isset( $this->list[ $option ] ) ) ? $this->list[ $option ] : null;
@@ -74,8 +76,8 @@ class Settings {
 	/**
 	 * Magic option setter
 	 *
-	 * @param string $option option name
-	 * @param mixed  $value option value
+	 * @param string $option option name.
+	 * @param mixed  $value option value.
 	 */
 	public function __set( $option, $value ) {
 		if ( isset( $this->list[ $option ] ) ) {
@@ -112,6 +114,7 @@ class Settings {
 	 */
 	private function init_defaults() {
 		$this->list = array(
+			'version'     => VERSION,
 			'config_data' => array(
 				'on_deactivate' => 0,
 				'on_delete'     => 0,

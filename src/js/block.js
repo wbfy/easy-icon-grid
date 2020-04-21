@@ -1,7 +1,7 @@
 /**
  * Block content inspector handler
  *
- * @var object eigSettings: global options from localize_script
+ * @var object eigSettings global settings from localize_script
  * @package easy-icon-grid
  */
 
@@ -30,7 +30,7 @@
 			 */
 			edit: function ( props ) {
 				return [
-					// Preview content
+					// Preview content.
 					gridContent( props, 'preview' ),
 					// Inspector elements
 					el( blockEditor.InspectorControls, { key: 'inspector' },
@@ -119,7 +119,7 @@
 			},
 
 			/**
-			 * Render and save grid elements
+			 * Render and save grid elements.
 			 */
 			save: function ( props ) {
 				return gridContent( props, 'save' );
@@ -245,7 +245,7 @@
 		return attrs;
 	}
 } )(
-	// Backwards compatibility with WordPress-5.0 block API
+	// Backwards compatibility with WordPress-5.0 block API.
 	( 'undefined' === typeof window.wp.blockEditor ) ? window.wp.editor : window.wp.blockEditor,
 	window.wp.components,
 	window.wp.i18n,

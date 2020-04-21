@@ -1,6 +1,6 @@
 <?php
 /**
- * Dashboard settings page controller
+ * Admin setting form handler
  *
  * @package easy-icon-grid
  */
@@ -10,7 +10,7 @@ namespace WBFY\EasyIconGrid;
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Dashboard options page handler
+ * Admin class
  */
 class Admin {
 
@@ -20,9 +20,9 @@ class Admin {
 	 */
 	public function init() {
 		register_setting(
-			'easy_icon_grid_settings', // Option group.
-			'easy_icon_grid', // Option name (in wp_settings)
-			array( $this, 'validate' ) // Sanitation callback
+			'easy_icon_grid_settings',
+			'easy_icon_grid',
+			array( $this, 'validate' )
 		);
 		add_filter( 'plugin_action_links_easy-icon-grid/easy-icon-grid.php', array( $this, 'plugin_admin_settings_link' ) );
 		$this->register_settings_form();
@@ -31,8 +31,8 @@ class Admin {
 	/**
 	 * Add 'settings' link onto WP Plugins page
 	 *
-	 * @param array $links links for WP Plugins page
-	 * @return array $links With new Settings link added
+	 * @param array $links links for WP Plugins page.
+	 * @return array $links With new Settings link added.
 	 */
 	public function plugin_admin_settings_link( $links ) {
 		$url           = esc_url(
@@ -52,11 +52,11 @@ class Admin {
 	 */
 	public function settings_menu_link() {
 		add_options_page(
-			__( 'Easy Icon Grid', 'easy-icon-grid' ), // Page title
-			__( 'Easy Icon Grid', 'easy-icon-grid' ), // Menu title
-			'manage_options', // Capability/permission required
-			'easy-icon-grid', // Page slug (unique id)
-			array( $this, 'render' ) // Renderer callback
+			__( 'Easy Icon Grid', 'easy-icon-grid' ),
+			__( 'Easy Icon Grid', 'easy-icon-grid' ),
+			'manage_options',
+			'easy-icon-grid',
+			array( $this, 'render' )
 		);
 	}
 
@@ -64,7 +64,7 @@ class Admin {
 	 * Add form and settings
 	 */
 	private function register_settings_form() {
-		// Font settings section
+		// Font settings section.
 		add_settings_section(
 			'easy_icon_grid_font',
 			__( 'Icon Font', 'easy-icon-grid' ),
@@ -88,7 +88,7 @@ class Admin {
 			'easy_icon_grid_font'
 		);
 
-		// Config data settings fields
+		// Config data settings fields.
 		add_settings_section(
 			'easy_icon_grid_config_data',
 			__( 'Configuration Data', 'easy-icon-grid' ),
@@ -118,15 +118,15 @@ class Admin {
 	 */
 	public function font_section_header() {
 		echo '<div>';
-		_e( 'The default icon font used is font-awesome.', 'easy-icon-grid' );
+		esc_html_e( 'The default icon font used is font-awesome.', 'easy-icon-grid' );
 		echo '</div>';
 		echo '<div>';
 		echo '<a href="https://fontawesome.com/v5.13.0/icons/" target="_blank">';
-		_e( 'View font-awesome Icons', 'easy-icon-grid' );
+		esc_html_e( 'View font-awesome Icons', 'easy-icon-grid' );
 		echo '</a>';
 		echo '</div>';
 		echo '<p>';
-		_e( 'In most situations the default Icon Font settings will be fine.', 'easy-icon-grid' );
+		esc_html_e( 'In most situations the default Icon Font settings will be fine.', 'easy-icon-grid' );
 		echo '</p>';
 	}
 
@@ -136,6 +136,7 @@ class Admin {
 	public function font_url_field() {
 		$settings = Settings::instance();
 
+		// @phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped -- already escaped
 		echo Html::input_text(
 			array(
 				'id'        => 'easy_icon_grid_font_url',
@@ -145,14 +146,15 @@ class Admin {
 				'value'     => $settings->font['url'],
 			)
 		);
+		// @phpcs:enable
 		echo '<div>';
-		_e( 'Easy Icon Grid uses an icon font to display the icons in the grid.', 'easy-icon-grid' );
+		esc_html_e( 'Easy Icon Grid uses an icon font to display the icons in the grid.', 'easy-icon-grid' );
 		echo '</div>';
 		echo '<div>';
-		_e( 'The URL field is used to set where it is downloaded from.', 'easy-icon-grid' );
+		esc_html_e( 'The URL field is used to set where it is downloaded from.', 'easy-icon-grid' );
 		echo '</div>';
 		echo '<div>';
-		_e( 'Its smart enough to distinguish between scripts and css.', 'easy-icon-grid' );
+		esc_html_e( 'Its smart enough to distinguish between scripts and css.', 'easy-icon-grid' );
 		echo '</div>';
 	}
 
@@ -162,6 +164,7 @@ class Admin {
 	public function font_class_prefix_field() {
 		$settings = Settings::instance();
 
+		// @phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped -- already escaped
 		echo Html::input_text(
 			array(
 				'id'        => 'easy_icon_grid_font_class_prefix',
@@ -171,18 +174,19 @@ class Admin {
 				'value'     => $settings->font['class_prefix'],
 			)
 		);
+		// @phscs:enable
 
 		echo '<div>';
-		_e( 'When you set the icon font class name for each icon in a grid, it often has a prefix.', 'easy-icon-grid' );
+		esc_html_e( 'When you set the icon font class name for each icon in a grid, it often has a prefix.', 'easy-icon-grid' );
 		echo '</div>';
 		echo '<div>';
-		_e( 'The Icon Class Prefix field is used to set this.', 'easy-icon-grid' );
+		esc_html_e( 'The Icon Class Prefix field is used to set this.', 'easy-icon-grid' );
 		echo '</div>';
 		echo '<div>';
-		_e( "For example, with the default font-awesome the prefix is 'fas fa-'.", 'easy-icon-grid' );
+		esc_html_e( "For example, with the default font-awesome the prefix is 'fas fa-'.", 'easy-icon-grid' );
 		echo '</div>';
 		echo '<div>';
-		_e( "If you than set the icon font class for an individual to 'snowflake' then the final class(es) used will be 'fas fa-snowflake' as required by the icon font definittion.", 'easy-icon-grid' );
+		esc_html_e( "If you than set the icon font class for an individual to 'snowflake' then the final class(es) used will be 'fas fa-snowflake' as required by the icon font definittion.", 'easy-icon-grid' );
 		echo '</div>';
 	}
 
@@ -190,7 +194,7 @@ class Admin {
 	 * Render config data settings header
 	 */
 	public function config_data_section_header() {
-		echo '<p>' . __( 'Remove all configuration data for this plugin when it is:', 'easy-icon-grid' ) . '</p>';
+		echo '<p>' . esc_html__( 'Remove all configuration data for this plugin when it is:', 'easy-icon-grid' ) . '</p>';
 	}
 
 	/**
@@ -199,6 +203,7 @@ class Admin {
 	public function config_data_on_deactivate_field() {
 		$settings = Settings::instance();
 
+		// @phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped -- already escaped
 		echo Html::input_check(
 			array(
 				'id'    => 'easy_icon_grid_config_data_on_deactivate',
@@ -206,6 +211,7 @@ class Admin {
 				'value' => $settings->config_data['on_deactivate'],
 			)
 		);
+		// @phpcs:enable
 	}
 
 	/**
@@ -214,6 +220,7 @@ class Admin {
 	public function config_data_on_delete_field() {
 		$settings = Settings::instance();
 
+		// @phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped -- already escaped
 		echo Html::input_check(
 			array(
 				'id'    => 'easy_icon_grid_config_data_on_delete',
@@ -221,10 +228,13 @@ class Admin {
 				'value' => $settings->config_data['on_delete'],
 			)
 		);
+		// @phpcs:enable
 	}
 
 	/**
 	 * Validate and sanitize inputs
+	 *
+	 * @param array $input input values from settings form.
 	 */
 	public function validate( $input ) {
 		$input['config_data']['on_deactivate'] = ( isset( $input['config_data']['on_deactivate'] ) ) ? true : false;
@@ -240,7 +250,7 @@ class Admin {
 	 */
 	public function render() {
 		if ( ! current_user_can( 'update_plugins' ) ) {
-			wp_die( __( 'You do not have sufficient permissions to access this page.', 'easy-icon-grid' ) );
+			wp_die( esc_html__( 'You do not have sufficient permissions to access this page.', 'easy-icon-grid' ) );
 		}
 
 		wp_enqueue_style(
@@ -250,9 +260,11 @@ class Admin {
 			VERSION
 		);
 
+		// @phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped -- already escaped
 		echo Templates::render(
 			'settings.php',
 			Settings::instance()
 		);
+		// @phpcs:enable
 	}
 }

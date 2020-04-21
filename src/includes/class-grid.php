@@ -1,6 +1,6 @@
 <?php
 /**
- * Output widget and shortcode html content for grid
+ * Grid content and output handler
  *
  * @package easy-icon-grid
  */
@@ -10,7 +10,7 @@ namespace WBFY\EasyIconGrid;
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Grid content/display (widgets and shortcodes
+ * Grid class
  */
 class Grid {
 
@@ -19,7 +19,7 @@ class Grid {
 	/**
 	 * Render icon grid html
 	 *
-	 * @param array $content grid content
+	 * @param array $content grid content.
 	 */
 	public static function render( $content ) {
 		self::register_styles();
@@ -61,18 +61,29 @@ class Grid {
 	 * Register font style or script link
 	 * The link can be a .js script or .css file
 	 *
-	 * @param boolean $enqueue whether to engueue the font loader as well as register it
+	 * @param boolean $enqueue whether to engueue the font loader as well as register it.
 	 */
 	public static function register_font( $enqueue = true ) {
 		$settings = Settings::instance();
 
 		if ( preg_match( '/\.js$/', $settings->font['url'] ) ) {
-			wp_register_script( self::FONT_ID, $settings->font['url'] );
+			wp_register_script(
+				self::FONT_ID,
+				$settings->font['url'],
+				null,
+				VERSION,
+				true
+			);
 			if ( $enqueue ) {
 				wp_enqueue_script( self::FONT_ID );
 			}
 		} else {
-			wp_register_style( self::FONT_ID, $settings->font['url'] );
+			wp_register_style(
+				self::FONT_ID,
+				$settings->font['url'],
+				null,
+				VERSION
+			);
 			if ( $enqueue ) {
 				wp_enqueue_style( self::FONT_ID );
 			}
@@ -82,13 +93,13 @@ class Grid {
 	/**
 	 * Register CSS styles for grid
 	 *
-	 * @param boolean $enqueue whether to engueue the style as well as register it
-	 * @return $id the ID used for the registered style
+	 * @param boolean $enqueue whether to engueue the style as well as register it.
+	 * @return $id the ID used for the registered style.
 	 */
 	public static function register_styles( $enqueue = true ) {
 		$id = 'easy-icon-grid-frontend-css';
 
-		// Frontend CSS
+		// Frontend CSS.
 		wp_register_style(
 			$id,
 			plugins_url( '/easy-icon-grid/assets/css/easy-icon-grid-frontend.min.css' ),

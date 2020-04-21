@@ -1,6 +1,6 @@
 <?php
 /**
- * Shortcode handler
+ * Easy Icon Grid shortcode handler
  *
  * @package easy-icon-grid
  */
@@ -10,10 +10,15 @@ namespace WBFY\EasyIconGrid;
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Parse and render shortcodes
+ * Shortcode class
  */
 class Shortcode {
 
+	/**
+	 * Shortcode parameters
+	 *
+	 * @var array
+	 */
 	private $content = array();
 
 	/**
@@ -26,8 +31,8 @@ class Shortcode {
 	/**
 	 * Handle easy_icon_grid shortcode and display grid
 	 *
-	 * @param array $attrs input attributes from shortcode
-	 * @return string generated grid html
+	 * @param array $attrs input attributes from shortcode.
+	 * @return string generated grid html.
 	 */
 	public function easy_icon_grid( $attrs ) {
 		$params = Grid::default_props();
