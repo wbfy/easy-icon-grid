@@ -93,7 +93,7 @@
 							el( components.SelectControl, {
 								label: i18n.__( 'Size', 'easy-icon-grid' ),
 								options: [
-									{ label: i18n.__( 'Set By Theme', 'easy-icon-grid' ), value: 'default' },
+									{ label: i18n.__( 'Default', 'easy-icon-grid' ), value: 'default' },
 									{ label: i18n.__( 'Small', 'easy-icon-grid' ), value: 'small' },
 									{ label: i18n.__( 'Medium', 'easy-icon-grid' ), value: 'medium' },
 									{ label: i18n.__( 'Large', 'easy-icon-grid' ), value: 'large' },

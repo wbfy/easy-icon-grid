@@ -96,7 +96,7 @@ defined( 'ABSPATH' ) || exit;
 		// @phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped -- already escaped
 		echo Html::select_list(
 			array(
-				'default' => esc_html__( 'Set By Theme', 'easy-icon-grid' ),
+				'default' => esc_html__( 'Default', 'easy-icon-grid' ),
 				'small'   => esc_html__( 'Small', 'easy-icon-grid' ),
 				'medium'  => esc_html__( 'Medium', 'easy-icon-grid' ),
 				'large'   => esc_html__( 'Large', 'easy-icon-grid' ),
