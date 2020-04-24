@@ -75,8 +75,10 @@ You can set the icon color individually for each grid
 
 
 == Screenshots ==
-1. Easy Icon Grid in action
+
+1. Easy Icon Grid
 
 
 == Changelog ==
+
 See changelog.txt in the plugin installation directory
