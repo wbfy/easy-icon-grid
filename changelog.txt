@@ -47,3 +47,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Updated
 - Increased responsive grid column minimum width from 100px to 150px
 - Changed 'Set By Theme' to 'Default' for title tag option
+
+## [1.0.7] - 2020-04-25
+### Updated
+- Changes to readme.txt
+### Added
+- Admin screenshot
