@@ -53,3 +53,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changes to readme.txt
 ### Added
 - Admin screenshot
+
+## [1.0.8] - 2020-04-26
+### Fixed
+- SVN trunk missing includes content
