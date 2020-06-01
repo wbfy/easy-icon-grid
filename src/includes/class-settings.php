@@ -13,7 +13,6 @@ defined( 'ABSPATH' ) || exit;
  * Settings class
  */
 class Settings {
-
 	/**
 	 * Internal settings variables
 	 *

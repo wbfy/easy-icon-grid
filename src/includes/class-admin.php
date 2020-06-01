@@ -249,7 +249,7 @@ class Admin {
 	 * Render settings page from templates/settings.php
 	 */
 	public function render() {
-		if ( ! current_user_can( 'update_plugins' ) ) {
+		if ( ! current_user_can( 'administrator' ) ) {
 			wp_die( esc_html__( 'You do not have sufficient permissions to access this page.', 'easy-icon-grid' ) );
 		}
 

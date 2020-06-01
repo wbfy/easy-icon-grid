@@ -1,7 +1,7 @@
 # Easy Icon Grid Plugin For WordPress
 
 ## Synopsis
-This plugin allows you to easily display 'feature' grids of icons and/or their descriptions
+This plugin allows you to easily display grids of icons and/or their descriptions
 using shortcodes, widgets and Gutenberg blocks.
 
 The grids can be used for many things, one example would be as a visually exciting way to
@@ -24,9 +24,6 @@ https://websitesbuiltforyou.com/plugins/wordpress/easy-icon-grid
 You can find full usage and installation instructions on the plugin homepage:
 
 https://websitesbuiltforyou.com/plugins/wordpress/easy-icon-grid
-
-You can also download a ready compiled installation zip file from here for the
-latest stable version.
 
 ## Contributors
 Steve Perkins

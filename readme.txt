@@ -28,7 +28,7 @@ The grids can be used for many things, one example would be as a visually exciti
 
 = How To Use =
 
-You can find full usage instructions on the:
+You can find full usage instructions on the plugin's home page:
 
 [https://websitesbuiltforyou.com/plugins/wordpress/easy-icon-grid](https://websitesbuiltforyou.com/plugins/wordpress/easy-icon-grid).
 
