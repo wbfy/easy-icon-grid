@@ -29,6 +29,6 @@ https://websitesbuiltforyou.com/plugins/wordpress/easy-icon-grid
 Steve Perkins
 
 ## Licence
-This plugin is licensed under the GNU GPL 2.0 or higher licence.
+This plugin is licensed under the [GNU GPL 2.0 or higher](https://www.gnu.org/licenses) licence.
 
 Copyright (c) [Websites Built For You](https://websitesbuiltforyou.com)
