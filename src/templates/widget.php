@@ -144,7 +144,7 @@ for ( $i = 1; $i <= MAX_ITEMS; $i++ ) {
 			array(
 				'id'        => $data['widget']->get_field_id( 'item' . $i . '_icon' ),
 				'name'      => $data['widget']->get_field_name( 'item' . $i . '_icon' ),
-				'maxlength' => '10',
+				'maxlength' => '15',
 				'value'     => $data['content'][ 'item' . $i . '_icon' ],
 				'class'     => 'widefat',
 			)
@@ -160,7 +160,7 @@ for ( $i = 1; $i <= MAX_ITEMS; $i++ ) {
 			array(
 				'id'        => $data['widget']->get_field_id( 'item' . $i . '_text' ),
 				'name'      => $data['widget']->get_field_name( 'item' . $i . '_text' ),
-				'maxlength' => '10',
+				'maxlength' => '40',
 				'value'     => $data['content'][ 'item' . $i . '_text' ],
 				'class'     => 'widefat',
 			)

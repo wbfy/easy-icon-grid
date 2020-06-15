@@ -63,3 +63,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Corrected text domain
 - Small changes to readme files
 - Updated admin permissions to require administrator
+
+## [1.0.10] - 2020-06-14
+### Fixed
+- Increased max length of icon class length in widget from 10 to 15
+- Increased max length of icon description length in widget from 10 to 40
