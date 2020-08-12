@@ -68,3 +68,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - Increased max length of icon class length in widget from 10 to 15
 - Increased max length of icon description length in widget from 10 to 40
+
+## [1.0.11] - 2020-08-12
+### Added
+- Tested with WordPress 5.5 and upped test to version
